@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import LogoutButton from '@/components/LogoutButton'
+import Link from 'next/link'
 
 export default async function FeedPage() {
   const supabase = await createClient()
@@ -28,6 +29,12 @@ export default async function FeedPage() {
         </header>
 
         <div className="feed-content">
+          <div className="feed-card">
+            <Link href="/feed/create-scenes" className="create-scenes-button">
+              Create Scenes
+            </Link>
+          </div>
+
           <div className="feed-card">
             <div className="feed-card-content">
               <p className="feed-card-label">

@@ -308,3 +308,151 @@ body {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* Create Scenes Button */
+.create-scenes-button {
+  display: block;
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  border: 2px solid #ffffff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.create-scenes-button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Back Button */
+.back-button {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  padding: 0.625rem 1.25rem;
+  border: 2px solid #ffffff;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.back-button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Script Form */
+.script-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.script-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.script-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.script-textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ffffff;
+  background: #000000;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 300px;
+  transition: all 0.2s;
+  line-height: 1.6;
+}
+
+.script-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.script-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff;
+}
+
+.script-error {
+  background: #ffffff;
+  border: 2px solid #ffffff;
+  color: #000000;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+
+.script-submit-button {
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  padding: 0.875rem 1rem;
+  border: 2px solid #ffffff;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.script-submit-button:hover:not(:disabled) {
+  background: #000000;
+  color: #ffffff;
+}
+
+.script-submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Result Display */
+.result-header {
+  margin-bottom: 1.5rem;
+}
+
+.result-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.result-json {
+  background: #000000;
+  border: 2px solid #ffffff;
+  padding: 1.5rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-height: 600px;
+  overflow-y: auto;
+}
