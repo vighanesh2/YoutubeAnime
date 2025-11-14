@@ -92,12 +92,25 @@ export default function CreateScenesPage() {
           </div>
 
           {result && (
-            <div className="feed-card">
-              <div className="result-header">
-                <h2 className="result-title">Extracted Data</h2>
+            <>
+              <div className="feed-card">
+                <div className="result-header">
+                  <h2 className="result-title">Extracted Data</h2>
+                </div>
+                <pre className="result-json">{JSON.stringify(result, null, 2)}</pre>
               </div>
-              <pre className="result-json">{JSON.stringify(result, null, 2)}</pre>
-            </div>
+              
+              {result.characters && result.characters.length > 0 && (
+                <div className="feed-card">
+                  <Link 
+                    href={`/feed/create-scenes/sketch?data=${encodeURIComponent(JSON.stringify(result))}`}
+                    className="sketch-characters-button"
+                  >
+                    Sketch the characters
+                  </Link>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>
