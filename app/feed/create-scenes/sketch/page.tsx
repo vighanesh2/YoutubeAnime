@@ -301,23 +301,43 @@ export default function SketchCharactersPage() {
 
           {/* Saved Characters Display */}
           {allCharactersDrawn && (
-            <div className="feed-card">
-              <h2 className="result-title">Your Characters</h2>
-              <div className="saved-characters-grid">
-                {data.characters.map((character, index) => (
-                  <div key={index} className="saved-character-item">
-                    <h3 className="character-name">{character.name}</h3>
-                    {savedDrawings[character.name] && (
-                      <img
-                        src={savedDrawings[character.name]}
-                        alt={character.name}
-                        className="saved-character-image"
-                      />
-                    )}
-                  </div>
-                ))}
+            <>
+              <div className="feed-card">
+                <h2 className="result-title">Your Characters</h2>
+                <div className="saved-characters-grid">
+                  {data.characters.map((character, index) => (
+                    <div key={index} className="saved-character-item">
+                      <h3 className="character-name">{character.name}</h3>
+                      {savedDrawings[character.name] && (
+                        <img
+                          src={savedDrawings[character.name]}
+                          alt={character.name}
+                          className="saved-character-image"
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+
+              <div className="feed-card">
+                <Link
+                  href="/feed/create-scenes/generate"
+                  onClick={() => {
+                    // Store data in sessionStorage to avoid URL length limits
+                    const generateData = {
+                      characters: data.characters,
+                      scenes: data.scenes,
+                      images: Object.values(savedDrawings),
+                    }
+                    sessionStorage.setItem('animeGenerationData', JSON.stringify(generateData))
+                  }}
+                  className="generate-anime-button"
+                >
+                  Generate Anime
+                </Link>
+              </div>
+            </>
           )}
         </div>
       </div>
