@@ -77,7 +77,11 @@ Please return ONLY valid JSON, no additional text or markdown formatting.`,
       // If parsing fails, try to extract JSON from the text
       const jsonMatch = content.text.match(/\{[\s\S]*\}/)
       if (jsonMatch) {
-        extractedData = JSON.parse(jsonMatch[0])
+        try {
+          extractedData = JSON.parse(jsonMatch[0])
+        } catch (e) {
+          throw new Error("Invalid JSON payload");
+        }
       } else {
         throw new Error('Failed to parse JSON from Claude response')
       }
