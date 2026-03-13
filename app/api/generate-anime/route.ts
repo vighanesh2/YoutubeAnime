@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
     const scenes = result.scenes || []
     const allMedia: Array<{ type: 'image' | 'video', url: string, sceneText: string, sceneIndex: number }> = []
 
-    scenes.forEach((scene: any, index: number) => {
+    scenes.slice(0, 100).forEach((scene: any, index: number) => {
       const sceneText = scene.text || ''
       const media = scene.media || []
       
